@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riri Land - Best Discord Server</title>
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Riri Land - Best Discord Server">
+  <meta property="og:description" content="Welcome to Riri Land! Explore a world of creativity, community, and fun with engaging and unique experiences.">
+  <meta property="og:image" content="images/og-image.jpg"> <!-- Replace with actual image path -->
+  <meta property="og:url" content="http://riri-land.vercel.app/">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      margin: 0;
+      overflow-x: hidden;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); /* Matches Royal Agents */
+    }
+
+    #welcome-page {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      opacity: 0.8; /* Blend with gradient */
+    }
+
+    .hero-content {
+      position: relative;
+      text-align: center;
+      z-index: 1;
+      opacity: 1; /* Ensure visible */
+      animation: fadeIn 1s ease-out;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5em;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(45deg, #ff69b4, #00ddeb); /* Matches Royal Agents */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .button {
+      display: inline-block;
+      padding: 8px 16px; /* Matches Royal Agents */
+      color: #fff;
+      background: linear-gradient(45deg, #ff69b4, #00ddeb);
+      border: none;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.9em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .button:hover {
+      background: linear-gradient(45deg, #00ddeb, #ff69b4);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 221, 235, 0.4);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.2em;
+      }
+
+      .button {
+        padding: 6px 12px;
+        font-size: 0.8em;
+      }
+    }
+   .dg { display: none !important; } .promo { display: none !important; }</style>
+</head>
+<body>
+  <div id="welcome-page">
+    <video class="background-video" autoplay loop muted playsinline poster="images/placeholder.jpg">
+      <source src="home.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-content">
+      <h1>Welcome to 🦋Riri Land🦋</h1>
+      <a href="home.html" class="button">Explore</a>
+    </div>
+  </div>
+<style>body, html { background: transparent !important; } #fluid-bg-container { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); z-index: -10000; pointer-events: none; } canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 9999; pointer-events: none; opacity: 0.5; mix-blend-mode: screen; } .dg { display: none !important; } .promo { display: none !important; }</style><div id="fluid-bg-container"></div><canvas></canvas><script src="/dat.gui.min.js"></script><script src="/script.js"></script></body>
+</html>

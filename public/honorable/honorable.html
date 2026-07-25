@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riri Land - Royal Agents</title>
+  <meta name="description" content="Profiles of top-ranked Madaris in the Riri Land community.">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      min-height: 100%;
+      overflow-x: hidden;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .honorable-header {
+      font-size: 3em;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(45deg, #ff69b4, #00ddeb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 30px;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+
+    .user-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      width: 85%;
+      margin: 0 auto;
+    }
+
+    .user-card {
+      background: rgba(0, 0, 0, 0.85);
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, opacity 0.5s ease;
+      backdrop-filter: blur(8px);
+      transform: translateY(40px);
+      opacity: 0;
+      position: relative;
+    }
+
+    .user-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .user-card:hover {
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7), 0 0 35px #00ddeb45, 0 0 70px #ff69b445;
+      transform: translateY(-3px);
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-align: left;
+    }
+
+    .user-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(0, 221, 235, 0.3);
+    }
+
+    .user-details {
+      flex: 1;
+    }
+
+    .user-name {
+      font-size: 1.4em;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 5px;
+      transition: color 0.3s ease;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .user-name:hover {
+      color: #00ddeb;
+    }
+
+    .badge-container {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 5px;
+    }
+
+    .badge-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+    }
+
+    .badge-icon:hover {
+      transform: scale(1.1);
+    }
+
+    .user-description {
+      font-size: 0.9em;
+      color: #e0e0e0;
+      font-style: italic;
+      margin-top: 10px;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .button {
+      display: inline-block;
+      margin: 40px auto;
+      padding: 10px 20px;
+      color: #fff;
+      background: linear-gradient(45deg, #ff69b4, #00ddeb);
+      border: none;
+      border-radius: 24px;
+      text-decoration: none;
+      font-size: 1em;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .button:hover {
+      background: linear-gradient(45deg, #00ddeb, #ff69b4);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 221, 235, 0.6);
+    }
+
+    @media (max-width: 768px) {
+      .honorable-header {
+        font-size: 2.2em;
+      }
+      .user-container {
+        grid-template-columns: 1fr;
+        width: 90%;
+      }
+      .user-card {
+        max-width: 350px;
+      }
+      .user-image {
+        width: 60px;
+        height: 60px;
+      }
+      .user-name {
+        font-size: 1.2em;
+      }
+      .user-description {
+        font-size: 0.8em;
+      }
+      .button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+      }
+    }
+   .dg { display: none !important; } .promo { display: none !important; }</style>
+</head>
+<body>
+  <main>
+    <h1 class="honorable-header">Top Ranked Madaris</h1>
+
+    <div class="user-container">
+      <div class="user-card">
+        <div class="user-info">
+          <img src="pfp/baraa.jpg" alt="Baraa" class="user-image">
+          <div class="user-details">
+            <a href="https://discord.com/users/988716458253123584" class="user-name">Baraa</a>
+            <div class="badge-container">
+              <img src="badges/baraicon.png" alt="Baraa Icon" class="badge-icon">
+              <img src="badges/level_50.png" alt="Level 50" class="badge-icon">
+              <img src="badges/level_20.png" alt="Level 20" class="badge-icon">
+              <img src="badges/riri_squad.png" alt="Riri Squad" class="badge-icon">
+            </div>
+            <p class="user-description">"My enemies are many, my equals are none."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="user-card">
+        <div class="user-info">
+          <img src="pfp/street.jpg" alt="Shade" class="user-image">
+          <div class="user-details">
+            <a href="https://discord.com/users/730088436291076097" class="user-name">Shady</a>
+            <div class="badge-container">
+              <img src="badges/royal_agent.png" alt="Royal Agent" class="badge-icon">
+              <img src="badges/level_100.png" alt="Level 100" class="badge-icon">
+              <img src="badges/level_50.png" alt="Level 50" class="badge-icon">
+              <img src="badges/level_20.png" alt="Level 20" class="badge-icon">
+              <img src="badges/riri_squad.png" alt="Riri Squad" class="badge-icon">
+            </div>
+            <p class="user-description">"Your fav Austrian painter."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="user-card">
+        <div class="user-info">
+          <img src="pfp/shah.jpg" alt="Shah" class="user-image">
+          <div class="user-details">
+            <a href="https://discord.com/users/948261448491094076" class="user-name">Shah</a>
+            <div class="badge-container">
+              <img src="badges/royal_agent.png" alt="Royal Agent" class="badge-icon">
+              <img src="badges/level_20.png" alt="Level 20" class="badge-icon">
+              <img src="badges/riri_squad.png" alt="Riri Squad" class="badge-icon">
+            </div>
+            <p class="user-description">"If life fucks you, just moan."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="user-card">
+        <div class="user-info">
+          <img src="pfp/arshifa.jpg" alt="Arshifa" class="user-image">
+          <div class="user-details">
+            <a href="https://discord.com/users/1193973211579297913" class="user-name">Arshifa</a>
+            <div class="badge-container">
+              <img src="badges/techagent.png" alt="Tech Agent" class="badge-icon">
+              <img src="badges/level_50.png" alt="Level 50" class="badge-icon">
+              <img src="badges/level_20.png" alt="Level 20" class="badge-icon">
+              <img src="badges/riri_squad.png" alt="Riri Squad" class="badge-icon">
+            </div>
+            <p class="user-description">"Your trusted tech partner."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="user-card">
+        <div class="user-info">
+          <img src="pfp/uzma.jpg" alt="Uzma" class="user-image">
+          <div class="user-details">
+            <a href="https://discord.com/users/1119293448420331621" class="user-name">Uzma</a>
+            <div class="badge-container">
+              <img src="badges/royal_agent.png" alt="Royal Agent" class="badge-icon">
+              <img src="badges/level_50.png" alt="Level 50" class="badge-icon">
+              <img src="badges/level_20.png" alt="Level 20" class="badge-icon">
+              <img src="badges/riri_squad.png" alt="Riri Squad" class="badge-icon">
+            </div>
+            <p class="user-description">"Why did you redeem it niggesh."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="user-card">
+        <div class="user-info">
+          <img src="pfp/rose.jpg" alt="Rosie" class="user-image">
+          <div class="user-details">
+            <a href="https://discord.com/users/1148283568464859208" class="user-name">Rosie</a>
+            <div class="badge-container">
+              <img src="badges/royal_agent.png" alt="Royal Agent" class="badge-icon">
+              <img src="badges/level_20.png" alt="Level 20" class="badge-icon">
+              <img src="badges/riri_squad.png" alt="Riri Squad" class="badge-icon">
+            </div>
+            <p class="user-description">"I don’t even fuck around, but I always find out."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="user-card">
+        <div class="user-info">
+          <img src="pfp/saad.jpg" alt="Saad" class="user-image">
+          <div class="user-details">
+            <a href="https://discord.com/users/928813286512795688" class="user-name">Saad</a>
+            <div class="badge-container">
+              <img src="badges/royal_agent.png" alt="Royal Agent" class="badge-icon">
+              <img src="badges/level_50.png" alt="Level 50" class="badge-icon">
+              <img src="badges/level_20.png" alt="Level 20" class="badge-icon">
+              <img src="badges/riri_squad.png" alt="Riri Squad" class="badge-icon">
+            </div>
+            <p class="user-description">"I will sacrifice my life for Pakistan."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="user-card">
+        <div class="user-info">
+          <img src="pfp/jude.jpg" alt="Jude" class="user-image">
+          <div class="user-details">
+            <a href="https://discord.com/users/988716458253123584" class="user-name">Jude</a>
+            <div class="badge-container">
+              <img src="badges/royal_agent.png" alt="Royal Agent" class="badge-icon">
+              <img src="badges/level_20.png" alt="Level 20" class="badge-icon">
+              <img src="badges/riri_squad.png" alt="Riri Squad" class="badge-icon">
+            </div>
+            <p class="user-description">"Busy being a doctor, I don’t talk to lower level."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="user-card">
+        <div class="user-info">
+          <img src="pfp/pat.jpg" alt="Pat" class="user-image">
+          <div class="user-details">
+            <a href="https://discord.com/users/988716458253123584" class="user-name">Pat</a>
+            <div class="badge-container">
+              <img src="badges/royal_agent.png" alt="Royal Agent" class="badge-icon">
+              <img src="badges/riri_squad.png" alt="Riri Squad" class="badge-icon">
+            </div>
+            <p class="user-description">"Work Work Work Work Work."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="back-button-container">
+      <a href="../home.html" class="button">Back to Home</a>
+    </div>
+  </main>
+
+  <script>
+    // Smooth fade-in/fade-out on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        entry.target.classList.toggle('visible', entry.isIntersecting);
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.user-card').forEach(card => {
+      observer.observe(card);
+    });
+
+    // Trigger initial reveal
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.user-card').forEach(card => {
+        setTimeout(() => {
+          card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        }, 100);
+      });
+    });
+  </script>
+<style>body, html { background: transparent !important; } #fluid-bg-container { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); z-index: -10000; pointer-events: none; } canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 9999; pointer-events: none; opacity: 0.5; mix-blend-mode: screen; } .dg { display: none !important; } .promo { display: none !important; }</style><div id="fluid-bg-container"></div><canvas></canvas><script src="/dat.gui.min.js"></script><script src="/script.js"></script></body>
+</html>

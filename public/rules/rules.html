@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riri Land - Rules</title>
+  <meta name="description" content="View the rules and guidelines for Riri Land to ensure a safe and friendly community experience.">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      height: 100%;
+      overflow-x: hidden;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: url('rules-background.gif') no-repeat center center;
+      background-size: cover;
+    }
+
+    .section-background {
+      padding: 40px 20px;
+      background: rgba(0, 0, 0, 0.85);
+      border-radius: 20px;
+      width: 85%;
+      max-width: 700px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      backdrop-filter: blur(5px);
+    }
+
+    .content-wrapper h2 {
+      font-size: 3em;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(45deg, #ff69b4, #00ddeb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 30px;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    ul {
+      list-style: none;
+      padding: 20px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(0, 221, 235, 0.3);
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    ul li {
+      font-size: 1.2em;
+      margin: 15px 0;
+      padding-left: 40px;
+      position: relative;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+
+    ul li::before {
+      content: '🌸';
+      position: absolute;
+      left: 10px;
+      font-size: 1.2em;
+      animation: bounce 1.5s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .button {
+      display: inline-block;
+      margin: 20px auto;
+      padding: 8px 16px;
+      color: #fff;
+      background: linear-gradient(45deg, #ff69b4, #00ddeb);
+      border: none;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.9em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .button:hover {
+      background: linear-gradient(45deg, #00ddeb, #ff69b4);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 221, 235, 0.4);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .section-background {
+        width: 90%;
+        padding: 20px;
+      }
+
+      .content-wrapper h2 {
+        font-size: 2.2em;
+      }
+
+      ul li {
+        font-size: 1em;
+        padding-left: 35px;
+      }
+
+      .button {
+        padding: 6px 12px;
+        font-size: 0.8em;
+      }
+    }
+   .dg { display: none !important; } .promo { display: none !important; }</style>
+</head>
+<body>
+  <main>
+    <section class="section-background">
+      <div class="content-wrapper">
+        <h2>Rulebook</h2>
+        <ul>
+          <li>NSFW Content (e.g., pornography, gore) is prohibited.</li>
+          <li>No discrimination (e.g., racism, sexism).</li>
+          <li>No flooding, spamming, or clogging of channels.</li>
+          <li>Follow Discord Terms of Service.</li>
+          <li>No promotion or creation of sub-servers.</li>
+        </ul>
+        <a href="../home.html" class="button">Back to Home</a>
+      </div>
+    </section>
+  </main>
+<style>body, html { background: transparent !important; } #fluid-bg-container { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); z-index: -10000; pointer-events: none; } canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 9999; pointer-events: none; opacity: 0.5; mix-blend-mode: screen; } .dg { display: none !important; } .promo { display: none !important; }</style><div id="fluid-bg-container"></div><canvas></canvas><script src="/dat.gui.min.js"></script><script src="/script.js"></script></body>
+</html>

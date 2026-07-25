@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riri Land - Home</title>
+  <meta name="description" content="Welcome to Riri Land - a fun and inclusive community with voice channels, roles, bots, and more. Join us today!">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      scroll-behavior: smooth;
+    }
+
+    main {
+      width: 100%;
+    }
+
+    .section-background {
+      padding: 40px 20px;
+      background: rgba(0, 0, 0, 0.85);
+      border-radius: 20px;
+      margin: 20px auto;
+      width: 85%;
+      max-width: 1000px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      backdrop-filter: blur(5px);
+    }
+
+    .content-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h2 {
+      font-size: 3em;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(45deg, #ff69b4, #00ddeb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 30px;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    #welcome .content-wrapper h2 {
+      background: none;
+      -webkit-background-clip: initial;
+      -webkit-text-fill-color: initial;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 15px;
+      border: 2px solid #00ddeb;
+      background: rgba(0, 0, 0, 0.6);
+      box-shadow: 0 4px 15px rgba(0, 221, 235, 0.3);
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(0, 221, 235, 0.3);
+      text-align: justify;
+      color: #e0e0e0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 15px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(0, 221, 235, 0.3);
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    ul li {
+      padding: 10px 0;
+      font-size: 1.2em;
+      color: #e0e0e0;
+      position: relative;
+      padding-left: 30px;
+    }
+
+    ul li::before {
+      content: '🌸';
+      position: absolute;
+      left: 0;
+      font-size: 1.2em;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 20px auto;
+      padding: 12px 24px;
+      color: #fff;
+      background: linear-gradient(45deg, #ff69b4, #00ddeb);
+      border: none;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 1.1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .button:hover {
+      background: linear-gradient(45deg, #00ddeb, #ff69b4);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 221, 235, 0.4);
+    }
+
+    #welcome {
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('image.jpg') no-repeat center center;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+
+    .scroll-down {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    .scroll-arrow {
+      display: inline-block;
+      font-size: 2.5em;
+      color: #00ddeb;
+      text-decoration: none;
+      animation: bounce 2s infinite;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .scroll-arrow:hover {
+      transform: translateY(5px);
+      color: #ff69b4;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .section-background {
+        width: 90%;
+        padding: 20px;
+      }
+
+      h2 {
+        font-size: 2.2em;
+      }
+
+      p, ul li {
+        font-size: 1em;
+      }
+
+      .button {
+        padding: 10px 20px;
+        font-size: 1em;
+      }
+
+      .scroll-arrow {
+        font-size: 2em;
+      }
+    }
+   .dg { display: none !important; } .promo { display: none !important; }</style>
+</head>
+<body>
+  <main>
+    <section id="welcome" class="section-background">
+      <div class="content-wrapper">
+        <h2>Welcome to Riri Land</h2>
+      </div>
+      <div class="scroll-down">
+        <a href="#about" class="scroll-arrow">
+          <span>▼</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="about" class="section-background">
+      <div class="content-wrapper">
+        <h2>About Us</h2>
+        <p>Riri Land is a diverse and inclusive community where you can make new friends with different personalities and ethnicities. We offer various voice channels for different purposes, cool roles and icons, fun bots, and regular movie nights. Join us and be part of this vibrant community!</p>
+      </div>
+    </section>
+
+    <section id="features" class="section-background">
+      <div class="content-wrapper">
+        <h2>Features</h2>
+        <ul>
+          <li>Great community with Desi, Arab, European, and more.</li>
+          <li>Different voice channels for various purposes.</li>
+          <li>Cool roles and icons.</li>
+          <li>Fun bots and a Moments channel for legendary moments.</li>
+          <li>Movie nights and much more!</li>
+        </ul>
+        <a href="rules/rules.html" class="button">Rules</a>
+      </div>
+    </section>
+
+    <section id="extras" class="section-background">
+      <div class="content-wrapper">
+        <h2>VIPs</h2>
+        <a href="staff/staff.html" class="button">Majesty</a>
+        <a href="honorable/honorable.html" class="button">Royal Agents</a>
+      </div>
+    </section>
+
+    <section id="join-us" class="section-background">
+      <div class="content-wrapper">
+        <h2>Join Us</h2>
+        <p>You’ve hit rock bottom... or have you? Join our server and reach new heights!</p>
+        <a href="https://discord.gg/EAkGtejTW9" class="button">Join Now</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+<style>body, html { background: transparent !important; } #fluid-bg-container { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); z-index: -10000; pointer-events: none; } canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 9999; pointer-events: none; opacity: 0.5; mix-blend-mode: screen; } .dg { display: none !important; } .promo { display: none !important; }</style><div id="fluid-bg-container"></div><canvas></canvas><script src="/dat.gui.min.js"></script><script src="/script.js"></script></body>
+</html>

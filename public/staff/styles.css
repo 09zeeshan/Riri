@@ -1,0 +1,227 @@
+html, body {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Make sure the content fits in the viewport */
+}
+
+.section-background {
+  padding: 60px 20px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  margin: 50px auto;
+  width: 80%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  max-height: 90vh; /* Ensure the section does not overflow vertically */
+  overflow: hidden; /* Hide overflow */
+}
+
+.content-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 2.8em;
+  margin-bottom: 30px;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(45deg, #ff69b4, #00bfff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.staff-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.staff-member {
+  perspective: 1000px; /* Add perspective for a more realistic flip effect */
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 280px;
+  height: 400px;
+  border: none;
+  transition: transform 0.6s ease-in-out, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Adding shadow for 3D depth */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.flip-card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7); /* Hover effect for a stronger shadow */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.flip-card-front {
+  background-color: #222;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.flip-card-front:hover {
+  background-color: #333; /* Hover effect to change card color */
+}
+
+.flip-card-back {
+  background-color: #333;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.flip-card-back:hover {
+  background-color: #444; /* Hover effect to change back card color */
+}
+
+.flip-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.flip-card-back p {
+  font-size: 1.3em;
+  color: #bbb;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Button Styles */
+.read-more, .back-btn {
+  background: #ff69b4;
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  margin-top: 15px;
+  display: inline-block;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.read-more:hover, .back-btn:hover {
+  background: #00bfff;
+  transform: scale(1.1);
+}
+
+/* Ensuring buttons are centered inside the card */
+.flip-card-front .read-more, .flip-card-back .back-btn {
+  display: inline-block;
+  margin: 10px auto;
+}
+
+.flip-card-back .back-btn {
+  background: #ff69b4;
+}
+
+.flip-card-back .back-btn:hover {
+  background: #00bfff;
+}
+
+/* Ensuring back button appears well on all screen sizes */
+a.back-btn {
+  background: #ff69b4;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 50px;
+  font-size: 1.1em;
+  transition: background 0.3s, transform 0.3s;
+}
+
+a.back-btn:hover {
+  background: #00bfff;
+  transform: scale(1.1);
+}
+
+.flip-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #111;
+  border-top: 1px solid #444;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1em;
+}
+
+.badge-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.badge-images img {
+  width: 60px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.quote {
+  font-size: 1.3em;
+  color: #bbb;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  margin-top: 15px;
+}
