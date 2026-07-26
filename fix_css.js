@@ -1,22 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Riri Land - Arifa</title>
-  <meta name="description" content="Arifa - Majesty of Riri Land">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
-  
-  <style>
-    body, html { margin: 0; padding: 0; min-height: 100vh; }
-    .dg, .promo { display: none !important; }
-  </style>
+const fs = require('fs');
 
-  <!-- Placeholder for the injected aesthetic override -->
-  
-
-
-
+const refinedAestheticStyles = `
 <style id="aesthetic-override">
   :root {
     --text-primary: #ffffff;
@@ -34,18 +18,6 @@
     scroll-behavior: smooth;
   }
   
-  canvas {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    z-index: 9999 !important;
-    pointer-events: none !important;
-    opacity: 0.3 !important;
-    mix-blend-mode: screen !important;
-  }
-
   #fluid-bg-container, .fluid-bg-container {
     background: linear-gradient(-45deg, #1A0B2E, #2d1033, #17183B, #200f26) !important;
     background-size: 400% 400% !important;
@@ -114,8 +86,7 @@
   }
   
   ul {
-    padding: 30px !important;
-    width: 100% !important;
+    padding: 20px 30px !important;
     max-width: 600px !important;
     margin: 0 auto 30px auto !important;
     text-align: left !important;
@@ -123,20 +94,20 @@
     background: rgba(0,0,0,0.1) !important;
     border-radius: 16px !important;
     border: 1px solid rgba(255,255,255,0.05) !important;
-    box-sizing: border-box !important;
+    display: inline-block;
   }
   
   ul li {
     font-weight: 300 !important;
     color: var(--text-secondary) !important;
-    font-size: 1.15em !important;
+    font-size: 1.1em !important;
     padding: 12px 0 12px 28px !important;
     border-bottom: 1px solid rgba(255,255,255,0.05) !important;
     transition: all 0.3s ease !important;
     line-height: 1.5 !important;
     position: relative !important;
     display: block !important;
-    text-align: left !important;
+    text-align: left;
   }
   
   ul li:last-child { border-bottom: none !important; }
@@ -185,34 +156,36 @@
   /* Honorable / Royal Agents Specific Layout */
   .user-container {
     display: flex !important;
-    flex-direction: column !important;
-    gap: 20px !important;
-    max-width: 800px !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 30px !important;
+    max-width: 1000px !important;
     margin: 0 auto !important;
-    padding: 20px 0 !important;
+    padding: 20px !important;
   }
   
-  .user-row {
+  .user-row, .user-card {
     background: rgba(255,255,255,0.03) !important;
     border: 1px solid rgba(255,255,255,0.05) !important;
     border-radius: 20px !important;
     padding: 24px !important;
     display: flex !important;
-    flex-direction: row !important;
+    flex-direction: column !important;
     align-items: center !important;
-    text-align: left !important;
+    text-align: center !important;
     transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease !important;
     backdrop-filter: blur(10px) !important;
-    gap: 30px !important;
+    flex: 1 1 280px;
+    max-width: 320px;
   }
   
-  .user-row:hover {
-    transform: translateY(-5px) !important;
+  .user-row:hover, .user-card:hover {
+    transform: translateY(-8px) !important;
     background: rgba(255,255,255,0.06) !important;
     box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 15px rgba(255,154,158,0.2) !important;
   }
   
-  .user-image-wrap { margin-bottom: 0 !important; flex-shrink: 0 !important; }
+  .user-image-wrap { margin-bottom: 16px !important; }
   
   .user-image-wrap img, .user-image {
     width: 90px !important;
@@ -229,7 +202,7 @@
     transform: scale(1.05) !important;
   }
   
-  .user-details { flex-grow: 1 !important; text-align: left !important; }
+  .user-details { width: 100% !important; }
   
   .user-name {
     font-family: 'Playfair Display', serif !important;
@@ -244,19 +217,19 @@
   .user-name:hover { color: var(--accent-1) !important; }
   
   .user-description {
-    font-size: 1.05em !important;
-    margin: 0 0 12px 0 !important;
-    text-align: left !important;
+    font-size: 0.95em !important;
+    margin: 0 0 16px 0 !important;
+    text-align: center !important;
     font-style: italic !important;
-    color: rgba(255,255,255,0.7) !important;
+    color: rgba(255,255,255,0.6) !important;
     line-height: 1.4 !important;
   }
   
   .badge-container {
     display: flex !important;
-    gap: 12px !important;
+    gap: 8px !important;
     flex-wrap: wrap !important;
-    justify-content: flex-start !important;
+    justify-content: center !important;
   }
   
   .badge-icon {
@@ -324,46 +297,26 @@
     #welcome .content-wrapper h2 { font-size: 3em !important; }
     .section-background { padding: 40px 20px !important; width: 95% !important; }
     p, .user-description, .quote { font-size: 1.05em !important; }
-    .user-container { flex-direction: column !important; padding: 10px 0 !important; }
-    .user-row { flex-direction: column !important; text-align: center !important; }
-    .user-description { text-align: center !important; }
-    .badge-container { justify-content: center !important; }
-    .user-details { text-align: center !important; }
+    .user-container { flex-direction: column !important; padding: 10px !important; }
+    .user-row { max-width: 100% !important; }
   }
 </style>
+`;
 
+const files = [
+  'public/index.html',
+  'public/home.html',
+  'public/rules/rules.html',
+  'public/moments/moments.html',
+  'public/honorable/honorable.html',
+  'public/staff/staff.html'
+];
 
-
-
-</head>
-<body>
-  <div id="fluid-bg-container"></div>
-  <canvas></canvas>
-
-  <main class="section-background">
-    <div class="content-wrapper">
-      <h2>Majesty of Riri Land</h2>
-      
-      <div class="staff-profile">
-        <img src="arifa.jpg" alt="Arifa">
-        
-        <div class="user-details" style="text-align: center;">
-          <h3 class="user-name" style="font-size: 2.5em !important; display: inline-block;">Arifa</h3>
-          <p class="user-description" style="font-size: 1.2em !important; margin-top: 10px !important;">"Fuck around, find out"</p>
-          
-          <div class="staff-badges">
-            <img src="../honorable/badges/majesty.png" alt="Majesty" class="badge-icon">
-          </div>
-        </div>
-      </div>
-      
-      <div class="back-button-container">
-        <a href="../home.html" class="button">Back to Home</a>
-      </div>
-    </div>
-  </main>
-  
-  <script src="/dat.gui.min.js"></script>
-  <script src="/script.js"></script>
-</body>
-</html>
+files.forEach(file => {
+  if (!fs.existsSync(file)) return;
+  let content = fs.readFileSync(file, 'utf8');
+  content = content.replace(/<style id="aesthetic-override">[\s\S]*?<\/style>/, refinedAestheticStyles);
+  // Also reduce the fluid opacity from 0.5 to 0.3
+  content = content.replace(/opacity:\s*0\.5;/g, 'opacity: 0.3;');
+  fs.writeFileSync(file, content);
+});

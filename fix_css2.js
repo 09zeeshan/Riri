@@ -1,22 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Riri Land - Arifa</title>
-  <meta name="description" content="Arifa - Majesty of Riri Land">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
-  
-  <style>
-    body, html { margin: 0; padding: 0; min-height: 100vh; }
-    .dg, .promo { display: none !important; }
-  </style>
+const fs = require('fs');
 
-  <!-- Placeholder for the injected aesthetic override -->
-  
-
-
-
+const refinedAestheticStyles = `
 <style id="aesthetic-override">
   :root {
     --text-primary: #ffffff;
@@ -34,18 +18,6 @@
     scroll-behavior: smooth;
   }
   
-  canvas {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    z-index: 9999 !important;
-    pointer-events: none !important;
-    opacity: 0.3 !important;
-    mix-blend-mode: screen !important;
-  }
-
   #fluid-bg-container, .fluid-bg-container {
     background: linear-gradient(-45deg, #1A0B2E, #2d1033, #17183B, #200f26) !important;
     background-size: 400% 400% !important;
@@ -331,39 +303,20 @@
     .user-details { text-align: center !important; }
   }
 </style>
+`;
 
+const files = [
+  'public/index.html',
+  'public/home.html',
+  'public/rules/rules.html',
+  'public/moments/moments.html',
+  'public/honorable/honorable.html',
+  'public/staff/staff.html'
+];
 
-
-
-</head>
-<body>
-  <div id="fluid-bg-container"></div>
-  <canvas></canvas>
-
-  <main class="section-background">
-    <div class="content-wrapper">
-      <h2>Majesty of Riri Land</h2>
-      
-      <div class="staff-profile">
-        <img src="arifa.jpg" alt="Arifa">
-        
-        <div class="user-details" style="text-align: center;">
-          <h3 class="user-name" style="font-size: 2.5em !important; display: inline-block;">Arifa</h3>
-          <p class="user-description" style="font-size: 1.2em !important; margin-top: 10px !important;">"Fuck around, find out"</p>
-          
-          <div class="staff-badges">
-            <img src="../honorable/badges/majesty.png" alt="Majesty" class="badge-icon">
-          </div>
-        </div>
-      </div>
-      
-      <div class="back-button-container">
-        <a href="../home.html" class="button">Back to Home</a>
-      </div>
-    </div>
-  </main>
-  
-  <script src="/dat.gui.min.js"></script>
-  <script src="/script.js"></script>
-</body>
-</html>
+files.forEach(file => {
+  if (!fs.existsSync(file)) return;
+  let content = fs.readFileSync(file, 'utf8');
+  content = content.replace(/<style id="aesthetic-override">[\s\S]*?<\/style>/, refinedAestheticStyles);
+  fs.writeFileSync(file, content);
+});
