@@ -244,16 +244,49 @@
     </section>
   </main>
 
+  <style>
+    .fart-emoji {
+      position: absolute;
+      font-size: 3rem;
+      pointer-events: none;
+      animation: floatUp 1s ease-out forwards;
+      z-index: 99999;
+    }
+    @keyframes floatUp {
+      0% { opacity: 1; transform: translate(-50%, 0) scale(1); }
+      100% { opacity: 0; transform: translate(-50%, -100px) scale(2); }
+    }
+  </style>
   <script>
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
+    document.addEventListener('DOMContentLoaded', () => {
+      const majestyBtn = document.querySelector('a.button[href="staff/staff.html"]');
+      if (majestyBtn) {
+        majestyBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          // Try playing fart.mp3 (user uploaded) or fallback to fart.wav (synthesized)
+          const fart = new Audio('fart.mp3');
+          fart.addEventListener('error', () => {
+            const fallbackFart = new Audio('fart.wav');
+            fallbackFart.play().catch(err => console.log(err));
+          });
+          fart.play().catch(err => console.log(err));
+          
+          // Visual effect
+          const rect = majestyBtn.getBoundingClientRect();
+          const emoji = document.createElement('div');
+          emoji.innerText = '💨';
+          emoji.className = 'fart-emoji';
+          emoji.style.left = (rect.left + rect.width / 2) + 'px';
+          emoji.style.top = rect.top + window.scrollY + 'px';
+          document.body.appendChild(emoji);
+          
+          // Wait for the sound to play a bit before navigating
+          setTimeout(() => {
+            window.location.href = this.getAttribute('href');
+          }, 1000);
         });
-      });
+      }
     });
   </script>
-<style>body, html { background: transparent !important; } #fluid-bg-container { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); z-index: -10000; pointer-events: none; } canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 9999; pointer-events: none; opacity: 0.5; mix-blend-mode: screen; } .dg { display: none !important; } .promo { display: none !important; }</style><div id="fluid-bg-container"></div><canvas></canvas><script src="/dat.gui.min.js"></script><script src="/script.js"></script></body>
+</body>
 </html>
